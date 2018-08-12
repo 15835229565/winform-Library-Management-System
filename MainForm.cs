@@ -17,27 +17,49 @@ namespace 图书馆管理系统
         {
             InitializeComponent();
         }
-
+        DataSet data_set;
         private int informationNum;
         private int returnNum;
         private int storageNum;
+        private int AllPage;
+        private int CurrentPage;
+        private int PageRows = 21;
+        private int RowValue = 0;
+        private int AllRowsnum;
+        private int startIndex = 0;
+        //private string tableStr;
+        SqlDataAdapter sql_adapter;
         public SqlConnection Sql_conection()
         {
             string connectionStr = "server=.;user=sa;pwd=sqlwxg;database=图书馆管理系统";
             SqlConnection sql_connection = new SqlConnection(connectionStr);
             return sql_connection;
         }
+        private void GetPage(string tableStr1)
+        {
+            CurrentPage = RowValue / PageRows + 1;
+            tbCurrentPage.Text = CurrentPage.ToString();
+
+            data_set.Clear();
+            sql_adapter.Fill(data_set, RowValue, PageRows, $"{tableStr1}");
+            bindingSource1.DataSource = data_set.Tables[0];
+            bindingNavigator1.BindingSource = bindingSource1;
+            dataGridView1.DataSource = bindingSource1;
+        }
         public DataSet Data_set(string tableStr)
         {
             SqlConnection sql_connection = Sql_conection();
-            DataSet data_set = new DataSet();
+            data_set = new DataSet();
 
             try
             {
                 sql_connection.Open();
                 string adapterStr = $"select * from {tableStr}";
-                SqlDataAdapter sql_adapter = new SqlDataAdapter(adapterStr, sql_connection);
+                sql_adapter = new SqlDataAdapter(adapterStr, sql_connection);
                 sql_adapter.Fill(data_set, $"{tableStr}");
+                AllRowsnum = data_set.Tables[0].Rows.Count;
+                AllPage = (AllRowsnum % PageRows == 0) ? (AllRowsnum / PageRows) : (AllRowsnum / PageRows + 1);
+                lbAllPage.Text = AllPage.ToString();
 
             }
             catch (Exception ex)
@@ -68,14 +90,12 @@ namespace 图书馆管理系统
             if (result == DialogResult.Yes)
             {
                 this.Close();
-
             }
             else
             {
                 this.Visible = true;
             }
         }
-
 
         private void toolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
@@ -104,22 +124,18 @@ namespace 图书馆管理系统
         private void MainForm_Load(object sender, EventArgs e)
         {
             menuStrip1.Visible = false;
-
             groupBox2.Visible = false;
             groupBox3.Visible = false;
             label6.Visible = false;
             bindingNavigator1.Visible = false;
             label1.Text = DateTime.Now.ToLongDateString();
             label6.Text = DateTime.Now.ToLongTimeString();
-            //label1.ForeColor = Color.Blue;
-            //label6.ForeColor = Color.Black;
             dataGridView1.DefaultCellStyle.BackColor = Color.AliceBlue;
             dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.WhiteSmoke;
             dataGridView2.DefaultCellStyle.BackColor = Color.AliceBlue;
             dataGridView2.AlternatingRowsDefaultCellStyle.BackColor = Color.WhiteSmoke;
             dataGridView1.Visible = false;
             dataGridView2.Visible = false;
-
         }
 
         private void tbMainID_TextChanged(object sender, EventArgs e)
@@ -165,14 +181,17 @@ namespace 图书馆管理系统
         {
             label1.Text = DateTime.Now.ToLongDateString();
             label6.Text = DateTime.Now.ToLongTimeString();
+
         }
         private void button6_Click(object sender, EventArgs e)
         {
             dataGridView1.Visible = true;
             dataGridView2.Visible = false;
+            RowValue = 0;
             if (tbMainBookNum2.Text != "")
             {
                 IdCardCheck_1("图书信息表", "编号", tbMainBookNum2.Text);
+
             }
             else if (tbMainBookName1.Text != "")
             {
@@ -180,7 +199,10 @@ namespace 图书馆管理系统
             }
             else
             {
+
                 dataGridView1.DataSource = Data_set("图书信息表").Tables[0];
+                GetPage("图书信息表");
+
             }
         }
 
@@ -199,11 +221,6 @@ namespace 图书馆管理系统
             {
 
             }
-
-
-
-
-
         }
         public void DeleteRow(string deletetableStr, int deleteID)
         {
@@ -242,18 +259,14 @@ namespace 图书馆管理系统
                     DeleteRow("借阅表", (int)dataGridView2.CurrentRow.Cells[0].Value);
                     dataGridView2.Rows.RemoveAt(dataGridView2.CurrentRow.Index);
                 }
-
             }
-
-
-
-
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             dataGridView1.Visible = false;
             dataGridView2.Visible = true;
+            RowValue = 0;
             if (tbMainID.Text != "")
             {
                 IdCardCheck_2("借阅表", "身份证号", tbMainID.Text);
@@ -265,8 +278,8 @@ namespace 图书馆管理系统
             else
             {
                 dataGridView2.DataSource = Data_set("借阅表").Tables[0];
+                GetPage("借阅表");
             }
-
         }
 
         private void toolStripButton4_Click(object sender, EventArgs e)
@@ -295,7 +308,6 @@ namespace 图书馆管理系统
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
             finally
@@ -330,7 +342,6 @@ namespace 图书馆管理系统
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
             finally
@@ -352,7 +363,6 @@ namespace 图书馆管理系统
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
             finally
@@ -406,21 +416,14 @@ namespace 图书馆管理系统
             {
                 if (e.Button == MouseButtons.Right)
                 {
-
                     dataGridView2.Rows[e.RowIndex].Selected = true;
                     dataGridView2.CurrentCell = dataGridView2.Rows[e.RowIndex].Cells[0];
                     contextMenuStrip1.Show(Cursor.Position);
-
                 }
             }
             catch
             {
-
             }
-
-
-
-
         }
 
         private void dataGridView2_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -429,17 +432,6 @@ namespace 图书馆管理系统
                 "'" + dataGridView2.CurrentCell.Value.ToString() + "'";
             string id = dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString();
             UpdateValues("借阅表", columns, id);
-        }
-
-
-        private void 添加用户ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void 删除用户ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void 添加账户ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -452,7 +444,6 @@ namespace 图书馆管理系统
         {
             account acc_ount = new account();
             acc_ount.Show();
-
         }
         private bool IsLoad = false;
 
@@ -463,13 +454,12 @@ namespace 图书馆管理系统
         private int maxAccountNum = 30;//支持同时存在的账户总数量
         private void button2_Click_1(object sender, EventArgs e)
         {
-
+            timer2.Enabled = true;
             GetAccount();
             if (IsHasRow)
             {
                 for (int i = 0; i < maxAccountNum; i++)
                 {
-
                     if ((string)usernameStr[i] == tbUser.Text && (string)pwdStr[i] == tbPwd.Text && (string)powerStr[i] == "管理员")
                     {
                         IsLoad = true;
@@ -480,23 +470,23 @@ namespace 图书馆管理系统
                     {
                         IsLoad = true;
                         MessageBox.Show($"欢迎普通用户{tbUser.Text}登录", "登录提示");
-
                     }
                     if (IsLoad)
                     {
                         maxAccountNum = i + 1;
                     }
-
                 }
                 if (CheckPower(tbUser.Text) != "管理员")
                 {
                     添加用户ToolStripMenuItem.Enabled = false;
+                    删除选中行ToolStripMenuItem.Visible = false;
                     dataGridView1.ReadOnly = true;
                     dataGridView2.ReadOnly = true;
                 }
                 else
                 {
                     添加用户ToolStripMenuItem.Enabled = true;
+                    删除选中行ToolStripMenuItem.Visible = true;
                     dataGridView1.ReadOnly = false;
                     dataGridView2.ReadOnly = false;
                 }
@@ -505,8 +495,6 @@ namespace 图书馆管理系统
             {
                 IsLoad = true;
             }
-            
-
             if (IsLoad)
             {
                 panel1.Visible = false;
@@ -515,7 +503,7 @@ namespace 图书馆管理系统
                 groupBox3.Visible = true;
                 bindingNavigator1.Visible = true;
                 label6.Visible = true;
-                this.MinimumSize = new Size(1000, 800);
+                this.MinimumSize = new Size(1000, 776);
                 this.MaximumSize = this.MinimumSize;
                 this.Size = MinimumSize;
                 this.FormBorderStyle = FormBorderStyle.Sizable;
@@ -528,8 +516,6 @@ namespace 图书馆管理系统
                 MessageBox.Show("用户登录失败，请确认账户或密码是否输入有误", "登录提示");
 
             }
-          
-
         }
 
         private void 删除ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -572,7 +558,7 @@ namespace 图书馆管理系统
             }
         }
         private string power_Str;
-       
+
         private string CheckPower(string powerStr)
         {
 
@@ -586,7 +572,6 @@ namespace 图书馆管理系统
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
             finally
@@ -594,6 +579,71 @@ namespace 图书馆管理系统
                 sql_connection.Close();
             }
             return power_Str;
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            label3.Text = label3.Text.Substring(1, label3.Text.Length - 1) + label3.Text.Substring(0, 1);
+        }
+
+        private void bindingNavigator1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            if (e.ClickedItem.Text == "上一页")
+            {
+                RowValue -= PageRows;
+                startIndex -= PageRows;
+                if (RowValue < 0)
+                {
+                    RowValue = 0;
+                    startIndex = 0;
+                    MessageBox.Show("当前已是第一页", "翻页提示");
+                }
+                if (dataGridView1.Visible)
+                {
+                    GetPage("图书信息表");
+                }
+                else
+                {
+                    GetPage("借阅表");
+                }
+            }
+            if (e.ClickedItem.Text == "下一页")
+            {
+                RowValue += PageRows;
+                startIndex += PageRows;
+                if (RowValue >= AllRowsnum)
+                {
+                    RowValue -= PageRows;
+                    startIndex -= PageRows;
+                    MessageBox.Show("当前已是最后页", "翻页提示");
+                }
+                if (dataGridView1.Visible)
+                {
+                    GetPage("图书信息表");
+                }
+                else
+                {
+                    GetPage("借阅表");
+                }
+            }
+        }
+
+        private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            Rectangle rec = new Rectangle(e.RowBounds.Location.X, e.RowBounds.Location.Y,
+                dataGridView1.RowHeadersWidth, e.RowBounds.Height);
+            TextRenderer.DrawText(e.Graphics, (e.RowIndex + 1 + startIndex).ToString(),
+                dataGridView1.DefaultCellStyle.Font, rec, dataGridView1.DefaultCellStyle.ForeColor,
+                dataGridView1.DefaultCellStyle.BackColor);
+        }
+
+        private void dataGridView2_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            Rectangle rec = new Rectangle(e.RowBounds.Location.X, e.RowBounds.Location.Y,
+                dataGridView2.RowHeadersWidth, e.RowBounds.Height);
+            TextRenderer.DrawText(e.Graphics, (e.RowIndex + 1 + startIndex).ToString(),
+                dataGridView2.DefaultCellStyle.Font, rec, dataGridView2.DefaultCellStyle.ForeColor,
+                dataGridView2.DefaultCellStyle.BackColor);
         }
     }
 }

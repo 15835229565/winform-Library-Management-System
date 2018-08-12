@@ -61,6 +61,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label6 = new System.Windows.Forms.Label();
@@ -74,23 +75,21 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.btLastPage = new System.Windows.Forms.ToolStripButton();
+            this.tbCurrentPage = new System.Windows.Forms.ToolStripTextBox();
+            this.lbAllPage = new System.Windows.Forms.ToolStripLabel();
+            this.btNextPage = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.删除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.btMainEnter = new System.Windows.Forms.Button();
             this.tbPwd = new System.Windows.Forms.TextBox();
             this.tbUser = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -99,7 +98,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.contextMenuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -159,28 +157,27 @@
             this.添加账户ToolStripMenuItem,
             this.修改删除ToolStripMenuItem});
             this.添加用户ToolStripMenuItem.Name = "添加用户ToolStripMenuItem";
-            this.添加用户ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.添加用户ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
             this.添加用户ToolStripMenuItem.Text = "账户管理";
-            this.添加用户ToolStripMenuItem.Click += new System.EventHandler(this.添加用户ToolStripMenuItem_Click);
             // 
             // 添加账户ToolStripMenuItem
             // 
             this.添加账户ToolStripMenuItem.Name = "添加账户ToolStripMenuItem";
-            this.添加账户ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.添加账户ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
             this.添加账户ToolStripMenuItem.Text = "添加账户";
             this.添加账户ToolStripMenuItem.Click += new System.EventHandler(this.添加账户ToolStripMenuItem_Click);
             // 
             // 修改删除ToolStripMenuItem
             // 
             this.修改删除ToolStripMenuItem.Name = "修改删除ToolStripMenuItem";
-            this.修改删除ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.修改删除ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
             this.修改删除ToolStripMenuItem.Text = "修改账户";
             this.修改删除ToolStripMenuItem.Click += new System.EventHandler(this.修改删除ToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(216, 26);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(144, 26);
             this.toolStripMenuItem2.Text = "退出";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
@@ -246,10 +243,11 @@
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(353, 169);
+            this.dataGridView1.Size = new System.Drawing.Size(353, 167);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseUp);
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
+            this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
             // 
             // contextMenuStrip1
             // 
@@ -325,6 +323,7 @@
             // 
             // button3
             // 
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Location = new System.Drawing.Point(883, 15);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
@@ -380,6 +379,7 @@
             // 
             // button6
             // 
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Location = new System.Drawing.Point(728, 15);
             this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
@@ -391,6 +391,7 @@
             // 
             // button4
             // 
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Location = new System.Drawing.Point(292, 15);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
@@ -414,6 +415,17 @@
             this.groupBox3.Size = new System.Drawing.Size(296, 86);
             this.groupBox3.TabIndex = 15;
             this.groupBox3.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("华文细黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.ForeColor = System.Drawing.Color.Crimson;
+            this.label3.Location = new System.Drawing.Point(60, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(160, 27);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "欢  迎  使  用  ";
             // 
             // label1
             // 
@@ -464,10 +476,10 @@
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
-            this.toolStripButton1,
-            this.toolStripTextBox1,
-            this.toolStripLabel1,
-            this.toolStripButton2,
+            this.btLastPage,
+            this.tbCurrentPage,
+            this.lbAllPage,
+            this.btNextPage,
             this.toolStripButton3,
             this.toolStripButton4,
             this.toolStripTextBox2});
@@ -481,6 +493,7 @@
             this.bindingNavigator1.Size = new System.Drawing.Size(1052, 27);
             this.bindingNavigator1.TabIndex = 16;
             this.bindingNavigator1.Text = "bindingNavigator1";
+            this.bindingNavigator1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.bindingNavigator1_ItemClicked);
             // 
             // bindingNavigatorCountItem
             // 
@@ -549,34 +562,34 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
-            // toolStripButton1
+            // btLastPage
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(58, 24);
-            this.toolStripButton1.Text = "上一页";
+            this.btLastPage.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btLastPage.Image = ((System.Drawing.Image)(resources.GetObject("btLastPage.Image")));
+            this.btLastPage.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btLastPage.Name = "btLastPage";
+            this.btLastPage.Size = new System.Drawing.Size(58, 24);
+            this.btLastPage.Text = "上一页";
             // 
-            // toolStripTextBox1
+            // tbCurrentPage
             // 
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(31, 27);
+            this.tbCurrentPage.Name = "tbCurrentPage";
+            this.tbCurrentPage.Size = new System.Drawing.Size(31, 27);
             // 
-            // toolStripLabel1
+            // lbAllPage
             // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(54, 24);
-            this.toolStripLabel1.Text = "总页数";
+            this.lbAllPage.Name = "lbAllPage";
+            this.lbAllPage.Size = new System.Drawing.Size(54, 24);
+            this.lbAllPage.Text = "总页数";
             // 
-            // toolStripButton2
+            // btNextPage
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(58, 24);
-            this.toolStripButton2.Text = "下一页";
+            this.btNextPage.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btNextPage.Image = ((System.Drawing.Image)(resources.GetObject("btNextPage.Image")));
+            this.btNextPage.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btNextPage.Name = "btNextPage";
+            this.btNextPage.Size = new System.Drawing.Size(58, 24);
+            this.btNextPage.Text = "下一页";
             // 
             // toolStripButton3
             // 
@@ -614,29 +627,15 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.ContextMenuStrip = this.contextMenuStrip2;
+            this.dataGridView2.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridView2.Location = new System.Drawing.Point(0, 160);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 27;
-            this.dataGridView2.Size = new System.Drawing.Size(353, 169);
+            this.dataGridView2.Size = new System.Drawing.Size(353, 167);
             this.dataGridView2.TabIndex = 17;
             this.dataGridView2.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_CellMouseUp);
             this.dataGridView2.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellValueChanged);
-            // 
-            // contextMenuStrip2
-            // 
-            this.contextMenuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.删除ToolStripMenuItem});
-            this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(109, 28);
-            // 
-            // 删除ToolStripMenuItem
-            // 
-            this.删除ToolStripMenuItem.Name = "删除ToolStripMenuItem";
-            this.删除ToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
-            this.删除ToolStripMenuItem.Text = "删除";
-            this.删除ToolStripMenuItem.Click += new System.EventHandler(this.删除ToolStripMenuItem_Click);
+            this.dataGridView2.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView2_RowPostPaint);
             // 
             // panel1
             // 
@@ -658,6 +657,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("华文细黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label8.ForeColor = System.Drawing.Color.LavenderBlush;
             this.label8.Location = new System.Drawing.Point(45, 35);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(246, 27);
@@ -667,7 +667,7 @@
             // 
             // btMainEnter
             // 
-            this.btMainEnter.Location = new System.Drawing.Point(117, 282);
+            this.btMainEnter.Location = new System.Drawing.Point(123, 230);
             this.btMainEnter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btMainEnter.Name = "btMainEnter";
             this.btMainEnter.Size = new System.Drawing.Size(96, 31);
@@ -678,7 +678,7 @@
             // 
             // tbPwd
             // 
-            this.tbPwd.Location = new System.Drawing.Point(81, 222);
+            this.tbPwd.Location = new System.Drawing.Point(81, 174);
             this.tbPwd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbPwd.Name = "tbPwd";
             this.tbPwd.Size = new System.Drawing.Size(183, 25);
@@ -687,23 +687,17 @@
             // 
             // tbUser
             // 
-            this.tbUser.Location = new System.Drawing.Point(81, 149);
+            this.tbUser.Location = new System.Drawing.Point(81, 127);
             this.tbUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbUser.Name = "tbUser";
             this.tbUser.Size = new System.Drawing.Size(183, 25);
             this.tbUser.TabIndex = 0;
             this.tbUser.Text = "用户名";
             // 
-            // label3
+            // timer2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("华文细黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.ForeColor = System.Drawing.Color.Crimson;
-            this.label3.Location = new System.Drawing.Point(60, 12);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(169, 27);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "欢  迎  使  用!!!";
+            this.timer2.Interval = 500;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // MainForm
             // 
@@ -711,7 +705,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(353, 330);
+            this.ClientSize = new System.Drawing.Size(353, 328);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.bindingNavigator1);
@@ -740,7 +734,6 @@
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.contextMenuStrip2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -790,10 +783,10 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton btLastPage;
+        private System.Windows.Forms.ToolStripTextBox tbCurrentPage;
+        private System.Windows.Forms.ToolStripLabel lbAllPage;
+        private System.Windows.Forms.ToolStripButton btNextPage;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
@@ -811,8 +804,7 @@
         private System.Windows.Forms.Button btMainEnter;
         private System.Windows.Forms.TextBox tbPwd;
         private System.Windows.Forms.TextBox tbUser;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
-        private System.Windows.Forms.ToolStripMenuItem 删除ToolStripMenuItem;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Timer timer2;
     }
 }
