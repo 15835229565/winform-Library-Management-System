@@ -27,7 +27,6 @@ namespace 图书馆管理系统
         private MainForm main_fomr = new MainForm();
         private void button1_Click(object sender, EventArgs e)
         {
-
                 Borrow(tbBorrowID.Text, tbBorrowNum.Text, tbBorrowName.Text, cbBorrowGender.Text,
                 dtpBorrowDate.Value, dtpReturnDate.Value, tbBorrowText.Text);
                 main_fomr.IsBorrwo("是", $"{tbBorrowNum.Text}");
@@ -55,7 +54,6 @@ namespace 图书馆管理系统
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
             finally

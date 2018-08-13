@@ -17,10 +17,6 @@ namespace 图书馆管理系统
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
         private inputInformation input_information = new inputInformation();
         private MainForm main_fomr = new MainForm();
         private void btStorageInput_Click(object sender, EventArgs e)
@@ -34,9 +30,7 @@ namespace 图书馆管理系统
             cbReturnGender.SelectedText="";
             dateTimePicker1.Value = dateTimePicker1.MaxDate;
             dateTimePicker2.Value = dateTimePicker2.MinDate;
-            textBox5.Clear();
-           
-
+            textBox5.Clear();         
         }
 
         private void returnInput_Load(object sender, EventArgs e)

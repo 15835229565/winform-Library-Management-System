@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,7 +18,10 @@ namespace 图书馆管理系统
         {
             InitializeComponent();
         }
-        DataSet data_set;
+        private DataSet data_set;
+        private SqlCommand sql_command;
+        private SqlDataReader sql_reader;
+        private SqlDataAdapter sql_adapter;
         private int informationNum;
         private int returnNum;
         private int storageNum;
@@ -27,8 +31,7 @@ namespace 图书馆管理系统
         private int RowValue = 0;
         private int AllRowsnum;
         private int startIndex = 0;
-        //private string tableStr;
-        SqlDataAdapter sql_adapter;
+
         public SqlConnection Sql_conection()
         {
             string connectionStr = "server=.;user=sa;pwd=sqlwxg;database=图书馆管理系统";
@@ -134,6 +137,8 @@ namespace 图书馆管理系统
             dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.WhiteSmoke;
             dataGridView2.DefaultCellStyle.BackColor = Color.AliceBlue;
             dataGridView2.AlternatingRowsDefaultCellStyle.BackColor = Color.WhiteSmoke;
+            dataGridView1.BackgroundColor = Color.AliceBlue;
+            dataGridView2.BackgroundColor = Color.AliceBlue;
             dataGridView1.Visible = false;
             dataGridView2.Visible = false;
         }
@@ -225,7 +230,7 @@ namespace 图书馆管理系统
         public void DeleteRow(string deletetableStr, int deleteID)
         {
             SqlConnection sql_connection = Sql_conection();
-            DataSet data_set = new DataSet();
+            data_set = new DataSet();
             try
             {
                 sql_connection.Open();
@@ -297,13 +302,13 @@ namespace 图书馆管理系统
         }
         public void IsBorrwo(string borrowStr, string numStr)
         {
-            DataSet data_set = new DataSet();
+            data_set = new DataSet();
             SqlConnection sql_connection = Sql_conection();
             try
             {
                 sql_connection.Open();
                 string updateStr = $"update 图书信息表 set 是否借出='{borrowStr}' where 编号 ='{numStr}' ";
-                SqlCommand sql_command = new SqlCommand(updateStr, sql_connection);
+                sql_command = new SqlCommand(updateStr, sql_connection);
                 sql_command.ExecuteScalar();
             }
             catch (Exception ex)
@@ -331,12 +336,12 @@ namespace 图书馆管理系统
         private void IdCardCheck_1(string table, string column, string idcard)
         {
             SqlConnection sql_connection = Sql_conection();
-            DataSet data_set = new DataSet();
+            data_set = new DataSet();
             try
             {
                 sql_connection.Open();
                 string adapterStr = $"select * from {table} where {column}='{idcard}'";
-                SqlDataAdapter sql_adapter = new SqlDataAdapter(adapterStr, sql_connection);
+                sql_adapter = new SqlDataAdapter(adapterStr, sql_connection);
                 sql_adapter.Fill(data_set, $"{table}");
                 dataGridView1.DataSource = data_set.Tables[0];
             }
@@ -352,23 +357,14 @@ namespace 图书馆管理系统
         private void IdCardCheck_2(string table, string column, string idcard)
         {
             SqlConnection sql_connection = Sql_conection();
-            DataSet data_set = new DataSet();
-            try
-            {
-                sql_connection.Open();
-                string adapterStr = $"select * from {table} where {column}='{idcard}'";
-                SqlDataAdapter sql_adapter = new SqlDataAdapter(adapterStr, sql_connection);
-                sql_adapter.Fill(data_set, $"{table}");
-                dataGridView2.DataSource = data_set.Tables[0];
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                sql_connection.Close();
-            }
+            data_set = new DataSet();
+
+            sql_connection.Open();
+            string adapterStr = $"select * from {table} where {column}='{idcard}'";
+            sql_adapter = new SqlDataAdapter(adapterStr, sql_connection);
+            sql_adapter.Fill(data_set, $"{table}");
+            dataGridView2.DataSource = data_set.Tables[0];
+
         }
         private void button3_Click(object sender, EventArgs e)
         {
@@ -388,13 +384,13 @@ namespace 图书馆管理系统
             {
                 sql_connection.Open();
                 string updateStr = $"update {tablename} set {columns} where id = {id} ";
-                SqlCommand sql_command = new SqlCommand(updateStr, sql_connection);
+                sql_command = new SqlCommand(updateStr, sql_connection);
                 sql_command.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch
             {
-
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("价格不能为空，可以用0代替", "更改提示");
+                dataGridView1.CurrentCell.Value = "0";
             }
             finally
             {
@@ -404,8 +400,9 @@ namespace 图书馆管理系统
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
+
             string columns = dataGridView1.Columns[e.ColumnIndex].HeaderText + "=" +
-                "'" + dataGridView1.CurrentCell.Value.ToString() + "'";
+"'" + dataGridView1.CurrentCell.Value + "'";
             string id = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
             UpdateValues("图书信息表", columns, id);
         }
@@ -532,8 +529,8 @@ namespace 图书馆管理系统
             {
                 sql_connection.Open();
                 string selectStr = $"select * from 管理员信息表";
-                SqlCommand sql_command = new SqlCommand(selectStr, sql_connection);
-                SqlDataReader sql_reader = sql_command.ExecuteReader();
+                sql_command = new SqlCommand(selectStr, sql_connection);
+                sql_reader = sql_command.ExecuteReader();
                 IsHasRow = sql_reader.HasRows;
                 while (sql_reader.Read())
                 {
@@ -567,7 +564,7 @@ namespace 图书馆管理系统
             {
                 sql_connection.Open();
                 string selectStr = $"select 权限 from 管理员信息表 where username='{powerStr}'";
-                SqlCommand sql_command = new SqlCommand(selectStr, sql_connection);
+                sql_command = new SqlCommand(selectStr, sql_connection);
                 power_Str = (string)sql_command.ExecuteScalar();
             }
             catch (Exception ex)
@@ -644,6 +641,21 @@ namespace 图书馆管理系统
             TextRenderer.DrawText(e.Graphics, (e.RowIndex + 1 + startIndex).ToString(),
                 dataGridView2.DefaultCellStyle.Font, rec, dataGridView2.DefaultCellStyle.ForeColor,
                 dataGridView2.DefaultCellStyle.BackColor);
+        }
+
+        private void tbPwd_TextChanged(object sender, EventArgs e)
+        {
+            tbPwd.PasswordChar = '*';
+        }
+
+        private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("价格或日期更改后的格式有问题，请重新更改", "更改提示");
+        }
+
+        private void dataGridView2_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("日期更改后的格式有问题，请重新更改", "更改提示");
         }
     }
 }

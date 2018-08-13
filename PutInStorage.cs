@@ -23,10 +23,9 @@ namespace 图书馆管理系统
             SqlConnection sql_connection = new SqlConnection(connectionStr);
             return sql_connection;
         }
-        private bool IsError;
+        private bool IsError = true;
         private void InputStorage()
         {
-
             SqlConnection sql_connection = Sql_connection();
             try
             {
@@ -37,12 +36,9 @@ namespace 图书馆管理系统
                     $"'{dtpStorageDate.Value}','{tbStorageRemark.Text}')";
                 SqlCommand sql_command = new SqlCommand(commandStr, sql_connection);
                 sql_command.ExecuteNonQuery();
-
-
             }
             catch
             {
-
                 MessageBox.Show("价格为必填项，请输入有效数字", "录入错误提示");
                 tbStoragePrice.Focus();
                 IsError = false;
@@ -57,7 +53,6 @@ namespace 图书馆管理系统
         {
             tbStorageRemark.Text = "(备注里只能输入20以内的字符)";
             dtpStorageDate.MaxDate = DateTime.Now;
-            tbStoragePrice.Text = "0";
         }
 
         private void btStorageInput_Click(object sender, EventArgs e)
@@ -82,8 +77,8 @@ namespace 图书馆管理系统
             else
             {
                 tbStoragePrice.Clear();
+                IsError = true;
             }
-
         }
 
         private void btStorageClear_Click(object sender, EventArgs e)
@@ -92,7 +87,7 @@ namespace 图书馆管理系统
             tbStorageBookName.Clear();
             tbStorageAuthor.Clear();
             tbPublishHouse.Clear();
-            tbStoragePrice.Text = "0";
+            tbStoragePrice.Clear();
             cbSource.SelectedItem = false;
             cbIsLoan.SelectedItem = false;
             cbType.SelectedItem = false;

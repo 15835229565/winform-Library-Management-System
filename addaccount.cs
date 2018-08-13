@@ -31,7 +31,6 @@ namespace 图书馆管理系统
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
             finally
@@ -39,6 +38,7 @@ namespace 图书馆管理系统
                 sql_connection.Close();
             }
             tbUserName.Clear();
+            tbUserName.Focus();
             tbPwd.Clear();
             cbAllow.Text = "";
         }
