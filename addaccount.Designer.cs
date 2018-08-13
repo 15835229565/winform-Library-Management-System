@@ -94,6 +94,9 @@
             // btCancle
             // 
             this.btCancle.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btCancle.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
+            this.btCancle.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Azure;
+            this.btCancle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btCancle.Location = new System.Drawing.Point(246, 180);
             this.btCancle.Name = "btCancle";
             this.btCancle.Size = new System.Drawing.Size(75, 33);
@@ -104,6 +107,9 @@
             // 
             // btEnter
             // 
+            this.btEnter.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
+            this.btEnter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Azure;
+            this.btEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btEnter.Location = new System.Drawing.Point(86, 180);
             this.btEnter.Name = "btEnter";
             this.btEnter.Size = new System.Drawing.Size(75, 33);

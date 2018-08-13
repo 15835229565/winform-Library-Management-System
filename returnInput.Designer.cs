@@ -149,6 +149,9 @@
             // 
             // btStorageInput
             // 
+            this.btStorageInput.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
+            this.btStorageInput.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Azure;
+            this.btStorageInput.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btStorageInput.Location = new System.Drawing.Point(19, 422);
             this.btStorageInput.Margin = new System.Windows.Forms.Padding(4);
             this.btStorageInput.Name = "btStorageInput";
@@ -161,6 +164,9 @@
             // btStorageClear
             // 
             this.btStorageClear.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btStorageClear.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
+            this.btStorageClear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Azure;
+            this.btStorageClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btStorageClear.Location = new System.Drawing.Point(167, 422);
             this.btStorageClear.Margin = new System.Windows.Forms.Padding(4);
             this.btStorageClear.Name = "btStorageClear";

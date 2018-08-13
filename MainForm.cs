@@ -287,19 +287,6 @@ namespace 图书馆管理系统
             }
         }
 
-        private void toolStripButton4_Click(object sender, EventArgs e)
-        {
-            toolStripTextBox2.Enabled = true;
-            if (toolStripTextBox2.Text == "临时记录框")
-            {
-                toolStripTextBox2.Clear();
-            }
-        }
-
-        private void toolStripButton3_Click(object sender, EventArgs e)
-        {
-            toolStripTextBox2.Enabled = false;
-        }
         public void IsBorrwo(string borrowStr, string numStr)
         {
             data_set = new DataSet();
@@ -460,13 +447,13 @@ namespace 图书馆管理系统
                     if ((string)usernameStr[i] == tbUser.Text && (string)pwdStr[i] == tbPwd.Text && (string)powerStr[i] == "管理员")
                     {
                         IsLoad = true;
-                        MessageBox.Show($"欢迎管理员{tbUser.Text}登录", "登录提示");
+                        MessageBox.Show($"欢迎管理员\n{tbUser.Text}登录", "登录提示");
 
                     }
                     else if ((string)usernameStr[i] == tbUser.Text && (string)pwdStr[i] == tbPwd.Text && (string)powerStr[i] == "普通用户")
                     {
                         IsLoad = true;
-                        MessageBox.Show($"欢迎普通用户{tbUser.Text}登录", "登录提示");
+                        MessageBox.Show($"欢迎普通用户\n{tbUser.Text}登录", "登录提示");
                     }
                     if (IsLoad)
                     {
@@ -510,7 +497,7 @@ namespace 图书馆管理系统
             }
             else
             {
-                MessageBox.Show("用户登录失败，请确认账户或密码是否输入有误", "登录提示");
+                MessageBox.Show("用户登录失败\n请确认账户或密码\n是否输入有误", "登录提示");
 
             }
         }

@@ -54,8 +54,11 @@
             // 
             // btStorageInput
             // 
+            this.btStorageInput.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
+            this.btStorageInput.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Azure;
+            this.btStorageInput.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btStorageInput.Location = new System.Drawing.Point(13, 502);
-            this.btStorageInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btStorageInput.Margin = new System.Windows.Forms.Padding(4);
             this.btStorageInput.Name = "btStorageInput";
             this.btStorageInput.Size = new System.Drawing.Size(100, 29);
             this.btStorageInput.TabIndex = 11;
@@ -66,7 +69,7 @@
             // tbStorageRemark
             // 
             this.tbStorageRemark.Location = new System.Drawing.Point(13, 382);
-            this.tbStorageRemark.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbStorageRemark.Margin = new System.Windows.Forms.Padding(4);
             this.tbStorageRemark.Multiline = true;
             this.tbStorageRemark.Name = "tbStorageRemark";
             this.tbStorageRemark.Size = new System.Drawing.Size(265, 85);
@@ -75,7 +78,7 @@
             // dtpStorageDate
             // 
             this.dtpStorageDate.Location = new System.Drawing.Point(87, 308);
-            this.dtpStorageDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpStorageDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtpStorageDate.Name = "dtpStorageDate";
             this.dtpStorageDate.Size = new System.Drawing.Size(169, 25);
             this.dtpStorageDate.TabIndex = 9;
@@ -83,7 +86,7 @@
             // tbStorageBookName
             // 
             this.tbStorageBookName.Location = new System.Drawing.Point(87, 48);
-            this.tbStorageBookName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbStorageBookName.Margin = new System.Windows.Forms.Padding(4);
             this.tbStorageBookName.Name = "tbStorageBookName";
             this.tbStorageBookName.Size = new System.Drawing.Size(169, 25);
             this.tbStorageBookName.TabIndex = 2;
@@ -91,7 +94,7 @@
             // tbStorageAuthor
             // 
             this.tbStorageAuthor.Location = new System.Drawing.Point(87, 86);
-            this.tbStorageAuthor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbStorageAuthor.Margin = new System.Windows.Forms.Padding(4);
             this.tbStorageAuthor.Name = "tbStorageAuthor";
             this.tbStorageAuthor.Size = new System.Drawing.Size(169, 25);
             this.tbStorageAuthor.TabIndex = 3;
@@ -99,7 +102,7 @@
             // tbStoragePrice
             // 
             this.tbStoragePrice.Location = new System.Drawing.Point(87, 162);
-            this.tbStoragePrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbStoragePrice.Margin = new System.Windows.Forms.Padding(4);
             this.tbStoragePrice.Name = "tbStoragePrice";
             this.tbStoragePrice.Size = new System.Drawing.Size(169, 25);
             this.tbStoragePrice.TabIndex = 5;
@@ -107,7 +110,7 @@
             // tbPublishHouse
             // 
             this.tbPublishHouse.Location = new System.Drawing.Point(87, 124);
-            this.tbPublishHouse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbPublishHouse.Margin = new System.Windows.Forms.Padding(4);
             this.tbPublishHouse.Name = "tbPublishHouse";
             this.tbPublishHouse.Size = new System.Drawing.Size(169, 25);
             this.tbPublishHouse.TabIndex = 4;
@@ -115,7 +118,7 @@
             // tbStorageID
             // 
             this.tbStorageID.Location = new System.Drawing.Point(87, 10);
-            this.tbStorageID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbStorageID.Margin = new System.Windows.Forms.Padding(4);
             this.tbStorageID.Name = "tbStorageID";
             this.tbStorageID.Size = new System.Drawing.Size(169, 25);
             this.tbStorageID.TabIndex = 1;
@@ -217,7 +220,7 @@
             "是",
             "否"});
             this.cbIsLoan.Location = new System.Drawing.Point(87, 236);
-            this.cbIsLoan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbIsLoan.Margin = new System.Windows.Forms.Padding(4);
             this.cbIsLoan.Name = "cbIsLoan";
             this.cbIsLoan.Size = new System.Drawing.Size(169, 23);
             this.cbIsLoan.TabIndex = 7;
@@ -225,8 +228,11 @@
             // btStorageClear
             // 
             this.btStorageClear.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btStorageClear.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
+            this.btStorageClear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Azure;
+            this.btStorageClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btStorageClear.Location = new System.Drawing.Point(179, 502);
-            this.btStorageClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btStorageClear.Margin = new System.Windows.Forms.Padding(4);
             this.btStorageClear.Name = "btStorageClear";
             this.btStorageClear.Size = new System.Drawing.Size(100, 29);
             this.btStorageClear.TabIndex = 12;
@@ -252,7 +258,7 @@
             "捐赠",
             "外借"});
             this.cbSource.Location = new System.Drawing.Point(87, 200);
-            this.cbSource.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbSource.Margin = new System.Windows.Forms.Padding(4);
             this.cbSource.Name = "cbSource";
             this.cbSource.Size = new System.Drawing.Size(169, 23);
             this.cbSource.TabIndex = 6;
@@ -267,7 +273,7 @@
             "人文",
             "历史"});
             this.cbType.Location = new System.Drawing.Point(87, 272);
-            this.cbType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbType.Margin = new System.Windows.Forms.Padding(4);
             this.cbType.Name = "cbType";
             this.cbType.Size = new System.Drawing.Size(169, 23);
             this.cbType.TabIndex = 8;
@@ -303,7 +309,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "PutInStorage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
