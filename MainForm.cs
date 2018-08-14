@@ -141,6 +141,15 @@ namespace 图书馆管理系统
             dataGridView2.BackgroundColor = Color.AliceBlue;
             dataGridView1.Visible = false;
             dataGridView2.Visible = false;
+            if (IsHasRows(result))
+            {
+                tbUser.Text = GetSaveAccount("username");
+                tbPwd.Text = GetSaveAccount("pwd");
+                if (tbPwd.Text=="password")
+                {
+                    tbPwd.Clear();
+                }
+            }
         }
 
         private void tbMainID_TextChanged(object sender, EventArgs e)
@@ -204,10 +213,8 @@ namespace 图书馆管理系统
             }
             else
             {
-
                 dataGridView1.DataSource = Data_set("图书信息表").Tables[0];
                 GetPage("图书信息表");
-
             }
         }
 
@@ -439,6 +446,42 @@ namespace 图书馆管理系统
         private void button2_Click_1(object sender, EventArgs e)
         {
             timer2.Enabled = true;
+            WhichUser();
+            if (IsLoad)
+            {
+                panel1.Visible = false;
+                menuStrip1.Visible = true;
+                groupBox2.Visible = true;
+                groupBox3.Visible = true;
+                bindingNavigator1.Visible = true;
+                label6.Visible = true;
+                this.MinimumSize = new Size(1000, 776);
+                this.MaximumSize = this.MinimumSize;
+                this.Size = MinimumSize;
+                this.FormBorderStyle = FormBorderStyle.Sizable;
+                this.Text = "图书馆简易管理系统";
+                dataGridView1.EditMode = DataGridViewEditMode.EditOnEnter;
+                dataGridView2.EditMode = DataGridViewEditMode.EditOnEnter;
+                SaveAccount("username", tbUser.Text);
+                if (cbSavePwd.Checked)
+                {
+                    SaveAccount("pwd", tbPwd.Text);
+                }
+                else
+                {
+                    SaveAccount("pwd","password");
+                }
+            }
+            else
+            {
+                MessageBox.Show("用户登录失败\n请确认账户或密码\n是否输入有误", "登录提示",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button3);
+
+
+            }
+        }
+        private void WhichUser()
+        {
             GetAccount();
             if (IsHasRow)
             {
@@ -479,29 +522,7 @@ namespace 图书馆管理系统
             {
                 IsLoad = true;
             }
-            if (IsLoad)
-            {
-                panel1.Visible = false;
-                menuStrip1.Visible = true;
-                groupBox2.Visible = true;
-                groupBox3.Visible = true;
-                bindingNavigator1.Visible = true;
-                label6.Visible = true;
-                this.MinimumSize = new Size(1000, 776);
-                this.MaximumSize = this.MinimumSize;
-                this.Size = MinimumSize;
-                this.FormBorderStyle = FormBorderStyle.Sizable;
-                this.Text = "图书馆简易管理系统";
-                dataGridView1.EditMode = DataGridViewEditMode.EditOnEnter;
-                dataGridView2.EditMode = DataGridViewEditMode.EditOnEnter;
-            }
-            else
-            {
-                MessageBox.Show("用户登录失败\n请确认账户或密码\n是否输入有误", "登录提示");
-
-            }
         }
-
         private void 删除ToolStripMenuItem_Click(object sender, EventArgs e)
         {
         }
@@ -643,6 +664,97 @@ namespace 图书馆管理系统
         private void dataGridView2_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             MessageBox.Show("日期更改后的格式有问题，请重新更改", "更改提示");
+        }
+
+        private bool result = true;
+        private void SaveAccount(string nameStr, string text)
+        {
+            SqlConnection sql_connection = Sql_conection();
+            string changeStr = "";
+            try
+            {
+                sql_connection.Open();
+                if (IsHasRows(result))
+                {
+                    changeStr = $"update 账号记录 set {nameStr}='{text}'";
+                }
+                else
+                {
+                    changeStr = $"insert 账号记录 ({nameStr}) values ('{text}')";
+                }
+                sql_command = new SqlCommand(changeStr, sql_connection);
+                sql_command.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                sql_connection.Close();
+            }
+
+        }
+        private string GetSaveAccount(string nameStr)
+        {
+            string str = "";
+
+            SqlConnection sql_connection = Sql_conection();
+            try
+            {
+                sql_connection.Open();
+
+                string commandStr = $"select {nameStr} from 账号记录";
+                sql_command = new SqlCommand(commandStr, sql_connection);
+                str = (string)sql_command.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                sql_connection.Close();
+            }
+
+
+            return str;
+        }
+        private bool IsHasRows(bool result)
+        {
+            SqlConnection sql_connection = Sql_conection();
+            try
+            {
+                sql_connection.Open();
+                string commandStr_1 = "select * from 账号记录";
+                sql_command = new SqlCommand(commandStr_1, sql_connection);
+                sql_reader = sql_command.ExecuteReader();
+                result = sql_reader.HasRows;
+                sql_reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                sql_connection.Close();
+            }
+            return result;
+        }
+
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = true;                  
+            this.MinimumSize = new Size(280, 334);
+            this.MaximumSize = this.MinimumSize;
+            this.Size = MinimumSize;
+            this.Text = "登录窗口";
+            tbUser.Clear();
+            tbPwd.Clear();
+            cbSavePwd.Checked = false;
         }
     }
 }
