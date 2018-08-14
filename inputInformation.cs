@@ -23,6 +23,7 @@ namespace 图书馆管理系统
         {
             dtpBorrowDate.MaxDate = DateTime.Now;
             dtpReturnDate.MinDate = DateTime.Now;
+            tbBorrowText.Text = "(备注里只能输入20以内的字符)";
         }
         private MainForm main_fomr = new MainForm();
         private void button1_Click(object sender, EventArgs e)

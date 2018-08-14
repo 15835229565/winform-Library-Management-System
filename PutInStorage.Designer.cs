@@ -57,10 +57,11 @@
             this.btStorageInput.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
             this.btStorageInput.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Azure;
             this.btStorageInput.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btStorageInput.Location = new System.Drawing.Point(13, 502);
+            this.btStorageInput.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btStorageInput.Location = new System.Drawing.Point(124, 379);
             this.btStorageInput.Margin = new System.Windows.Forms.Padding(4);
             this.btStorageInput.Name = "btStorageInput";
-            this.btStorageInput.Size = new System.Drawing.Size(100, 29);
+            this.btStorageInput.Size = new System.Drawing.Size(126, 45);
             this.btStorageInput.TabIndex = 11;
             this.btStorageInput.Text = "入  库";
             this.btStorageInput.UseVisualStyleBackColor = true;
@@ -68,161 +69,178 @@
             // 
             // tbStorageRemark
             // 
-            this.tbStorageRemark.Location = new System.Drawing.Point(13, 382);
+            this.tbStorageRemark.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tbStorageRemark.Location = new System.Drawing.Point(314, 243);
             this.tbStorageRemark.Margin = new System.Windows.Forms.Padding(4);
             this.tbStorageRemark.Multiline = true;
             this.tbStorageRemark.Name = "tbStorageRemark";
-            this.tbStorageRemark.Size = new System.Drawing.Size(265, 85);
+            this.tbStorageRemark.Size = new System.Drawing.Size(259, 89);
             this.tbStorageRemark.TabIndex = 10;
             // 
             // dtpStorageDate
             // 
-            this.dtpStorageDate.Location = new System.Drawing.Point(87, 308);
+            this.dtpStorageDate.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dtpStorageDate.Location = new System.Drawing.Point(404, 127);
             this.dtpStorageDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtpStorageDate.Name = "dtpStorageDate";
-            this.dtpStorageDate.Size = new System.Drawing.Size(169, 25);
+            this.dtpStorageDate.Size = new System.Drawing.Size(169, 30);
             this.dtpStorageDate.TabIndex = 9;
             // 
             // tbStorageBookName
             // 
-            this.tbStorageBookName.Location = new System.Drawing.Point(87, 48);
+            this.tbStorageBookName.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tbStorageBookName.Location = new System.Drawing.Point(124, 68);
             this.tbStorageBookName.Margin = new System.Windows.Forms.Padding(4);
             this.tbStorageBookName.Name = "tbStorageBookName";
-            this.tbStorageBookName.Size = new System.Drawing.Size(169, 25);
+            this.tbStorageBookName.Size = new System.Drawing.Size(169, 30);
             this.tbStorageBookName.TabIndex = 2;
             // 
             // tbStorageAuthor
             // 
-            this.tbStorageAuthor.Location = new System.Drawing.Point(87, 86);
+            this.tbStorageAuthor.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tbStorageAuthor.Location = new System.Drawing.Point(124, 127);
             this.tbStorageAuthor.Margin = new System.Windows.Forms.Padding(4);
             this.tbStorageAuthor.Name = "tbStorageAuthor";
-            this.tbStorageAuthor.Size = new System.Drawing.Size(169, 25);
+            this.tbStorageAuthor.Size = new System.Drawing.Size(169, 30);
             this.tbStorageAuthor.TabIndex = 3;
             // 
             // tbStoragePrice
             // 
-            this.tbStoragePrice.Location = new System.Drawing.Point(87, 162);
+            this.tbStoragePrice.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tbStoragePrice.Location = new System.Drawing.Point(124, 245);
             this.tbStoragePrice.Margin = new System.Windows.Forms.Padding(4);
             this.tbStoragePrice.Name = "tbStoragePrice";
-            this.tbStoragePrice.Size = new System.Drawing.Size(169, 25);
+            this.tbStoragePrice.Size = new System.Drawing.Size(169, 30);
             this.tbStoragePrice.TabIndex = 5;
             // 
             // tbPublishHouse
             // 
-            this.tbPublishHouse.Location = new System.Drawing.Point(87, 124);
+            this.tbPublishHouse.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tbPublishHouse.Location = new System.Drawing.Point(124, 186);
             this.tbPublishHouse.Margin = new System.Windows.Forms.Padding(4);
             this.tbPublishHouse.Name = "tbPublishHouse";
-            this.tbPublishHouse.Size = new System.Drawing.Size(169, 25);
+            this.tbPublishHouse.Size = new System.Drawing.Size(169, 30);
             this.tbPublishHouse.TabIndex = 4;
             // 
             // tbStorageID
             // 
-            this.tbStorageID.Location = new System.Drawing.Point(87, 10);
+            this.tbStorageID.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tbStorageID.Location = new System.Drawing.Point(124, 9);
             this.tbStorageID.Margin = new System.Windows.Forms.Padding(4);
             this.tbStorageID.Name = "tbStorageID";
-            this.tbStorageID.Size = new System.Drawing.Size(169, 25);
+            this.tbStorageID.Size = new System.Drawing.Size(169, 30);
             this.tbStorageID.TabIndex = 1;
             // 
             // lbStorageRemark
             // 
             this.lbStorageRemark.AutoSize = true;
-            this.lbStorageRemark.Location = new System.Drawing.Point(13, 346);
+            this.lbStorageRemark.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbStorageRemark.Location = new System.Drawing.Point(400, 219);
             this.lbStorageRemark.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbStorageRemark.Name = "lbStorageRemark";
-            this.lbStorageRemark.Size = new System.Drawing.Size(53, 15);
+            this.lbStorageRemark.Size = new System.Drawing.Size(69, 20);
             this.lbStorageRemark.TabIndex = 28;
             this.lbStorageRemark.Text = "备  注";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 315);
+            this.label7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label7.Location = new System.Drawing.Point(310, 134);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 15);
+            this.label7.Size = new System.Drawing.Size(89, 20);
             this.label7.TabIndex = 26;
             this.label7.Text = "入库时间";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 239);
+            this.label6.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label6.Location = new System.Drawing.Point(307, 14);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 15);
+            this.label6.Size = new System.Drawing.Size(89, 20);
             this.label6.TabIndex = 25;
             this.label6.Text = "是否借出";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 165);
+            this.label5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.Location = new System.Drawing.Point(13, 248);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 15);
+            this.label5.Size = new System.Drawing.Size(69, 20);
             this.label5.TabIndex = 24;
             this.label5.Text = "价  格";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 128);
+            this.label4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.Location = new System.Drawing.Point(13, 189);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 15);
+            this.label4.Size = new System.Drawing.Size(69, 20);
             this.label4.TabIndex = 23;
             this.label4.Text = "出版社";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 89);
+            this.label3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(13, 130);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 15);
+            this.label3.Size = new System.Drawing.Size(69, 20);
             this.label3.TabIndex = 22;
             this.label3.Text = "作  者";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 51);
+            this.label2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Location = new System.Drawing.Point(13, 71);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 15);
+            this.label2.Size = new System.Drawing.Size(69, 20);
             this.label2.TabIndex = 21;
             this.label2.Text = "书  名";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(13, 12);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 15);
+            this.label1.Size = new System.Drawing.Size(69, 20);
             this.label1.TabIndex = 20;
             this.label1.Text = "编  号";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 202);
+            this.label8.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label8.Location = new System.Drawing.Point(13, 307);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 15);
+            this.label8.Size = new System.Drawing.Size(89, 20);
             this.label8.TabIndex = 27;
             this.label8.Text = "图书来源";
             // 
             // cbIsLoan
             // 
+            this.cbIsLoan.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cbIsLoan.FormattingEnabled = true;
             this.cbIsLoan.Items.AddRange(new object[] {
             "是",
             "否"});
-            this.cbIsLoan.Location = new System.Drawing.Point(87, 236);
+            this.cbIsLoan.Location = new System.Drawing.Point(404, 11);
             this.cbIsLoan.Margin = new System.Windows.Forms.Padding(4);
             this.cbIsLoan.Name = "cbIsLoan";
-            this.cbIsLoan.Size = new System.Drawing.Size(169, 23);
+            this.cbIsLoan.Size = new System.Drawing.Size(169, 28);
             this.cbIsLoan.TabIndex = 7;
             // 
             // btStorageClear
@@ -231,10 +249,11 @@
             this.btStorageClear.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
             this.btStorageClear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Azure;
             this.btStorageClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btStorageClear.Location = new System.Drawing.Point(179, 502);
+            this.btStorageClear.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btStorageClear.Location = new System.Drawing.Point(343, 379);
             this.btStorageClear.Margin = new System.Windows.Forms.Padding(4);
             this.btStorageClear.Name = "btStorageClear";
-            this.btStorageClear.Size = new System.Drawing.Size(100, 29);
+            this.btStorageClear.Size = new System.Drawing.Size(126, 45);
             this.btStorageClear.TabIndex = 12;
             this.btStorageClear.Text = "清  除";
             this.btStorageClear.UseVisualStyleBackColor = true;
@@ -243,28 +262,31 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 275);
+            this.label9.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label9.Location = new System.Drawing.Point(307, 73);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(67, 15);
+            this.label9.Size = new System.Drawing.Size(89, 20);
             this.label9.TabIndex = 44;
             this.label9.Text = "图书种类";
             // 
             // cbSource
             // 
+            this.cbSource.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cbSource.FormattingEnabled = true;
             this.cbSource.Items.AddRange(new object[] {
             "采购",
             "捐赠",
             "外借"});
-            this.cbSource.Location = new System.Drawing.Point(87, 200);
+            this.cbSource.Location = new System.Drawing.Point(124, 304);
             this.cbSource.Margin = new System.Windows.Forms.Padding(4);
             this.cbSource.Name = "cbSource";
-            this.cbSource.Size = new System.Drawing.Size(169, 23);
+            this.cbSource.Size = new System.Drawing.Size(169, 28);
             this.cbSource.TabIndex = 6;
             // 
             // cbType
             // 
+            this.cbType.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cbType.FormattingEnabled = true;
             this.cbType.Items.AddRange(new object[] {
             "小说",
@@ -272,10 +294,10 @@
             "科学",
             "人文",
             "历史"});
-            this.cbType.Location = new System.Drawing.Point(87, 272);
+            this.cbType.Location = new System.Drawing.Point(404, 70);
             this.cbType.Margin = new System.Windows.Forms.Padding(4);
             this.cbType.Name = "cbType";
-            this.cbType.Size = new System.Drawing.Size(169, 23);
+            this.cbType.Size = new System.Drawing.Size(169, 28);
             this.cbType.TabIndex = 8;
             // 
             // PutInStorage
@@ -285,7 +307,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.CancelButton = this.btStorageClear;
-            this.ClientSize = new System.Drawing.Size(288, 550);
+            this.ClientSize = new System.Drawing.Size(590, 437);
             this.Controls.Add(this.cbType);
             this.Controls.Add(this.cbSource);
             this.Controls.Add(this.label9);

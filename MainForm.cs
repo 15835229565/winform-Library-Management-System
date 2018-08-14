@@ -589,6 +589,14 @@ namespace 图书馆管理系统
         private void timer2_Tick(object sender, EventArgs e)
         {
             label3.Text = label3.Text.Substring(1, label3.Text.Length - 1) + label3.Text.Substring(0, 1);
+            if (DateTime.Now.Second%2==0)
+            {
+                label3.ForeColor = Color.Red;
+            }
+            else
+            {
+                label3.ForeColor = Color.Blue;
+            }
         }
 
         private void bindingNavigator1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
