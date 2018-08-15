@@ -44,7 +44,7 @@ namespace 图书馆管理系统
         是否借出 nvarchar(10),
         种类 nvarchar(20),
         入库时间 date,
-        备注 nvarchar(20)
+        备注 nvarchar(100)
         )
         create table 借阅表
         (
@@ -55,7 +55,9 @@ namespace 图书馆管理系统
         性别 nvarchar(10),
         借阅日期 date,
         应还日期 date,
-        备注 nvarchar(20)
+        借出状态 nvarchar(5),
+        操作时间 datetime,
+        备注 nvarchar(100)
         )
         create table 账号记录
         (

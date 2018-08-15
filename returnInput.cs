@@ -22,7 +22,7 @@ namespace 图书馆管理系统
         private void btStorageInput_Click(object sender, EventArgs e)
         {
             input_information.Borrow(textBox4.Text,textBox1.Text, textBox7.Text,cbReturnGender.Text
-                ,dateTimePicker1.Value,dateTimePicker2.Value,textBox5.Text);
+                ,dateTimePicker1.Value,dateTimePicker2.Value, comboBox1.Text,DateTime.Now,textBox5.Text);
             main_fomr.IsBorrwo("否", $"{textBox1.Text}");
             textBox4.Clear();
             textBox1.Clear();
@@ -30,6 +30,7 @@ namespace 图书馆管理系统
             cbReturnGender.SelectedText="";
             dateTimePicker1.Value = dateTimePicker1.MaxDate;
             dateTimePicker2.Value = dateTimePicker2.MinDate;
+            comboBox1.SelectedText = "";
             textBox5.Clear();         
         }
 
@@ -49,6 +50,11 @@ namespace 图书馆管理系统
             dateTimePicker1.Value = dateTimePicker1.MaxDate;
             dateTimePicker2.Value = dateTimePicker2.MinDate;
             textBox5.Clear();
+        }
+
+        private void btReturnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -94,5 +94,10 @@ namespace 图书馆管理系统
             dtpStorageDate.Value = dtpStorageDate.MaxDate;
             tbStorageRemark.Clear();
         }
+
+        private void btStorageClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

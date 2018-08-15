@@ -49,5 +49,10 @@ namespace 图书馆管理系统
             tbPwd.Clear();
             this.Close();
         }
+
+        private void btAccountClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

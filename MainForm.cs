@@ -281,11 +281,11 @@ namespace 图书馆管理系统
             RowValue = 0;
             if (tbMainID.Text != "")
             {
-                IdCardCheck_2("借阅表", "身份证号", tbMainID.Text);
+                IdCardCheck_1("借阅表", "身份证号", tbMainID.Text);
             }
             else if (tbMainBookNum1.Text != "")
             {
-                IdCardCheck_2("借阅表", "编号", tbMainBookNum1.Text);
+                IdCardCheck_1("借阅表", "编号", tbMainBookNum1.Text);
             }
             else
             {
@@ -348,28 +348,17 @@ namespace 图书馆管理系统
                 sql_connection.Close();
             }
         }
-        private void IdCardCheck_2(string table, string column, string idcard)
-        {
-            SqlConnection sql_connection = Sql_conection();
-            data_set = new DataSet();
-
-            sql_connection.Open();
-            string adapterStr = $"select * from {table} where {column}='{idcard}'";
-            sql_adapter = new SqlDataAdapter(adapterStr, sql_connection);
-            sql_adapter.Fill(data_set, $"{table}");
-            dataGridView2.DataSource = data_set.Tables[0];
-
-        }
+    
         private void button3_Click(object sender, EventArgs e)
         {
             tbMainID.Clear();
-            tbMainID.Enabled = true;
+            //tbMainID.Enabled = true;
             tbMainBookNum1.Clear();
-            tbMainBookNum1.Enabled = true;
+            //tbMainBookNum1.Enabled = true;
             tbMainBookNum2.Clear();
-            tbMainBookNum2.Enabled = true;
+            //tbMainBookNum2.Enabled = true;
             tbMainBookName1.Clear();
-            tbMainBookName1.Enabled = true;
+            //tbMainBookName1.Enabled = true;
         }
         public void UpdateValues(string tablename, string columns, string id)
         {
@@ -455,7 +444,7 @@ namespace 图书馆管理系统
                 groupBox3.Visible = true;
                 bindingNavigator1.Visible = true;
                 label6.Visible = true;
-                this.MinimumSize = new Size(1000, 776);
+                this.MinimumSize = new Size(1034, 776);
                 this.MaximumSize = this.MinimumSize;
                 this.Size = MinimumSize;
                 this.FormBorderStyle = FormBorderStyle.Sizable;
@@ -521,6 +510,7 @@ namespace 图书馆管理系统
             else
             {
                 IsLoad = true;
+                MessageBox.Show("欢迎使用，检测到您当前未添加账户\n为了信息安全性，建议您及时添加账户信息","登录提示");
             }
         }
         private void 删除ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -726,8 +716,6 @@ namespace 图书馆管理系统
             {
                 sql_connection.Close();
             }
-
-
             return str;
         }
         private bool IsHasRows(bool result)
@@ -763,6 +751,19 @@ namespace 图书馆管理系统
             tbUser.Clear();
             tbPwd.Clear();
             cbSavePwd.Checked = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("请确定是否要退出该应用", "退出提示", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            else
+            {
+                this.Visible = true;
+            }
         }
     }
 }

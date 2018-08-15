@@ -18,7 +18,7 @@ namespace 图书馆管理系统
         {
             InitializeComponent();
         }
-        
+
         private void 借阅信息录入_Load(object sender, EventArgs e)
         {
             dtpBorrowDate.MaxDate = DateTime.Now;
@@ -28,30 +28,31 @@ namespace 图书馆管理系统
         private MainForm main_fomr = new MainForm();
         private void button1_Click(object sender, EventArgs e)
         {
-                Borrow(tbBorrowID.Text, tbBorrowNum.Text, tbBorrowName.Text, cbBorrowGender.Text,
-                dtpBorrowDate.Value, dtpReturnDate.Value, tbBorrowText.Text);
-                main_fomr.IsBorrwo("是", $"{tbBorrowNum.Text}");
-                tbBorrowID.Clear();
-                tbBorrowNum.Clear();
-                tbBorrowName.Clear();
-                cbBorrowGender.SelectedText = "";
-                dtpBorrowDate.Value = dtpBorrowDate.MaxDate;
-                dtpReturnDate.Value = dtpReturnDate.MinDate;
-                tbBorrowText.Clear();
-         }
-        public void Borrow(string id,string num,string name,string gender,DateTime borrowdate,DateTime returndate
-            ,string text)
+            Borrow(tbBorrowID.Text, tbBorrowNum.Text, tbBorrowName.Text, cbBorrowGender.Text,
+            dtpBorrowDate.Value, dtpReturnDate.Value, cbBorrowStatus.Text, DateTime.Now, tbBorrowText.Text);
+            main_fomr.IsBorrwo("是", $"{tbBorrowNum.Text}");
+            tbBorrowID.Clear();
+            tbBorrowNum.Clear();
+            tbBorrowName.Clear();
+            cbBorrowGender.SelectedText = "";
+            dtpBorrowDate.Value = dtpBorrowDate.MaxDate;
+            dtpReturnDate.Value = dtpReturnDate.MinDate;
+            cbBorrowStatus.SelectedText = "";
+            tbBorrowText.Clear();
+        }
+        public void Borrow(string id, string num, string name,string gender,DateTime borrowdate, DateTime returndate
+            ,string status,DateTime checktime,string text)
         {
             DataSet data_set = new DataSet();
             SqlConnection sql_connection = main_fomr.Sql_conection();
             try
             {
                 sql_connection.Open();
-                string adapterStr = "insert 借阅表 (身份证号,编号,姓名,性别,借阅日期,应还日期,备注)values" +
+                string adapterStr = "insert 借阅表 (身份证号,编号,姓名,性别,借阅日期,应还日期,借出状态,操作时间,备注)values" +
                     $"('{id}','{num}','{name}','{gender}'," +
-                    $"'{borrowdate}','{returndate}','{text}')";
-                SqlDataAdapter sql_adapter = new SqlDataAdapter(adapterStr,sql_connection);
-                sql_adapter.Fill(data_set,"借阅表");
+                    $"'{borrowdate}','{returndate}','{status}','{checktime}','{text}')";
+                SqlDataAdapter sql_adapter = new SqlDataAdapter(adapterStr, sql_connection);
+                sql_adapter.Fill(data_set, "借阅表");
             }
             catch (Exception ex)
             {
@@ -72,6 +73,11 @@ namespace 图书馆管理系统
             dtpBorrowDate.Value = dtpBorrowDate.MaxDate;
             dtpReturnDate.Value = dtpReturnDate.MinDate;
             tbBorrowText.Clear();
+        }
+
+        private void btBorrowClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

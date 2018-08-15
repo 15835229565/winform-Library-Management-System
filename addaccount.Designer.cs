@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addaccount));
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,9 +43,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(70, 123);
+            this.label3.Location = new System.Drawing.Point(52, 98);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 20);
+            this.label3.Size = new System.Drawing.Size(56, 16);
             this.label3.TabIndex = 15;
             this.label3.Text = "权  限";
             // 
@@ -52,9 +54,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(70, 71);
+            this.label2.Location = new System.Drawing.Point(52, 57);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 20);
+            this.label2.Size = new System.Drawing.Size(56, 16);
             this.label2.TabIndex = 14;
             this.label2.Text = "密  码";
             // 
@@ -62,9 +65,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(70, 24);
+            this.label1.Location = new System.Drawing.Point(52, 19);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 20);
+            this.label1.Size = new System.Drawing.Size(56, 16);
             this.label1.TabIndex = 13;
             this.label1.Text = "账户名";
             // 
@@ -75,26 +79,29 @@
             this.cbAllow.Items.AddRange(new object[] {
             "管理员",
             "普通用户"});
-            this.cbAllow.Location = new System.Drawing.Point(161, 120);
+            this.cbAllow.Location = new System.Drawing.Point(121, 96);
+            this.cbAllow.Margin = new System.Windows.Forms.Padding(2);
             this.cbAllow.Name = "cbAllow";
-            this.cbAllow.Size = new System.Drawing.Size(169, 28);
+            this.cbAllow.Size = new System.Drawing.Size(128, 24);
             this.cbAllow.TabIndex = 3;
             // 
             // tbPwd
             // 
             this.tbPwd.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tbPwd.Location = new System.Drawing.Point(161, 68);
+            this.tbPwd.Location = new System.Drawing.Point(121, 54);
+            this.tbPwd.Margin = new System.Windows.Forms.Padding(2);
             this.tbPwd.Name = "tbPwd";
             this.tbPwd.PasswordChar = '*';
-            this.tbPwd.Size = new System.Drawing.Size(169, 30);
+            this.tbPwd.Size = new System.Drawing.Size(128, 26);
             this.tbPwd.TabIndex = 2;
             // 
             // tbUserName
             // 
             this.tbUserName.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tbUserName.Location = new System.Drawing.Point(161, 21);
+            this.tbUserName.Location = new System.Drawing.Point(121, 17);
+            this.tbUserName.Margin = new System.Windows.Forms.Padding(2);
             this.tbUserName.Name = "tbUserName";
-            this.tbUserName.Size = new System.Drawing.Size(169, 30);
+            this.tbUserName.Size = new System.Drawing.Size(128, 26);
             this.tbUserName.TabIndex = 1;
             // 
             // btCancle
@@ -104,9 +111,10 @@
             this.btCancle.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Azure;
             this.btCancle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btCancle.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btCancle.Location = new System.Drawing.Point(226, 184);
+            this.btCancle.Location = new System.Drawing.Point(170, 147);
+            this.btCancle.Margin = new System.Windows.Forms.Padding(2);
             this.btCancle.Name = "btCancle";
-            this.btCancle.Size = new System.Drawing.Size(104, 33);
+            this.btCancle.Size = new System.Drawing.Size(78, 26);
             this.btCancle.TabIndex = 5;
             this.btCancle.Text = "取  消";
             this.btCancle.UseVisualStyleBackColor = true;
@@ -118,9 +126,10 @@
             this.btEnter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Azure;
             this.btEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btEnter.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btEnter.Location = new System.Drawing.Point(74, 184);
+            this.btEnter.Location = new System.Drawing.Point(56, 147);
+            this.btEnter.Margin = new System.Windows.Forms.Padding(2);
             this.btEnter.Name = "btEnter";
-            this.btEnter.Size = new System.Drawing.Size(104, 33);
+            this.btEnter.Size = new System.Drawing.Size(78, 26);
             this.btEnter.TabIndex = 4;
             this.btEnter.Text = "确  定";
             this.btEnter.UseVisualStyleBackColor = true;
@@ -129,11 +138,11 @@
             // addaccount
             // 
             this.AcceptButton = this.btEnter;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.CancelButton = this.btCancle;
-            this.ClientSize = new System.Drawing.Size(403, 229);
+            this.ClientSize = new System.Drawing.Size(302, 183);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -142,6 +151,9 @@
             this.Controls.Add(this.tbUserName);
             this.Controls.Add(this.btCancle);
             this.Controls.Add(this.btEnter);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "addaccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "添加账户";
