@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "图书馆管理系统", "图书馆管理系统.csproj", "{B3373601-6353-4816-BE55-084BD2E0E594}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "数据库管理系统", "数据库管理系统\数据库管理系统.sqlproj", "{BE517EB8-EFD5-4BC3-9834-CC7FEC736F05}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,12 @@ Global
 		{B3373601-6353-4816-BE55-084BD2E0E594}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3373601-6353-4816-BE55-084BD2E0E594}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3373601-6353-4816-BE55-084BD2E0E594}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE517EB8-EFD5-4BC3-9834-CC7FEC736F05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE517EB8-EFD5-4BC3-9834-CC7FEC736F05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE517EB8-EFD5-4BC3-9834-CC7FEC736F05}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{BE517EB8-EFD5-4BC3-9834-CC7FEC736F05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE517EB8-EFD5-4BC3-9834-CC7FEC736F05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE517EB8-EFD5-4BC3-9834-CC7FEC736F05}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
