@@ -38,7 +38,7 @@ namespace 图书馆管理系统
         {
             dateTimePicker1.MaxDate = DateTime.Now;
             dateTimePicker2.MinDate = DateTime.Now;
-            textBox5.Text = "(备注里只能输入20以内的字符)";
+            textBox5.Text = "(备注里只能输入100以内的字符)";
         }
 
         private void btStorageClear_Click(object sender, EventArgs e)

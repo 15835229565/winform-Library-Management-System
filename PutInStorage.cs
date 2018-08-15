@@ -51,7 +51,7 @@ namespace 图书馆管理系统
         }
         private void PutInStorage_Load(object sender, EventArgs e)
         {
-            tbStorageRemark.Text = "(备注里只能输入20以内的字符)";
+            tbStorageRemark.Text = "(备注里只能输入100以内的字符)";
             dtpStorageDate.MaxDate = DateTime.Now;
         }
 
