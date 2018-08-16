@@ -300,7 +300,7 @@
             this.AcceptButton = this.btStorageInput;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.AliceBlue;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.CancelButton = this.btStorageClose;
             this.ClientSize = new System.Drawing.Size(442, 350);
             this.Controls.Add(this.btStorageClose);

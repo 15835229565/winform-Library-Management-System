@@ -31,11 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,7 +43,6 @@
             this.添加账户ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.修改删除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.关于ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -63,6 +60,7 @@
             this.tbMainBookName1 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btMainClose = new System.Windows.Forms.Button();
             this.tbMainBookNum2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
@@ -95,7 +93,6 @@
             this.tbPwd = new System.Windows.Forms.TextBox();
             this.tbUser = new System.Windows.Forms.TextBox();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.btMainClose = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -128,6 +125,7 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.BackColor = System.Drawing.Color.AliceBlue;
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(68, 21);
             this.toolStripMenuItem1.Text = "借阅录入";
@@ -135,6 +133,8 @@
             // 
             // toolStripMenuItem4
             // 
+            this.toolStripMenuItem4.BackColor = System.Drawing.Color.AliceBlue;
+            this.toolStripMenuItem4.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
             this.toolStripMenuItem4.Size = new System.Drawing.Size(68, 21);
             this.toolStripMenuItem4.Text = "借阅归还";
@@ -142,6 +142,8 @@
             // 
             // toolStripMenuItem3
             // 
+            this.toolStripMenuItem3.BackColor = System.Drawing.Color.AliceBlue;
+            this.toolStripMenuItem3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.Size = new System.Drawing.Size(92, 21);
             this.toolStripMenuItem3.Text = "图书入库录入";
@@ -149,25 +151,28 @@
             // 
             // 增删改账号管理员权限ToolStripMenuItem
             // 
+            this.增删改账号管理员权限ToolStripMenuItem.BackColor = System.Drawing.Color.AliceBlue;
             this.增删改账号管理员权限ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.添加用户ToolStripMenuItem,
-            this.toolStripMenuItem5,
-            this.toolStripMenuItem2});
+            this.toolStripMenuItem5});
+            this.增删改账号管理员权限ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.增删改账号管理员权限ToolStripMenuItem.Name = "增删改账号管理员权限ToolStripMenuItem";
             this.增删改账号管理员权限ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.增删改账号管理员权限ToolStripMenuItem.Text = "账户";
             // 
             // 添加用户ToolStripMenuItem
             // 
+            this.添加用户ToolStripMenuItem.BackColor = System.Drawing.Color.Pink;
             this.添加用户ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.添加账户ToolStripMenuItem,
             this.修改删除ToolStripMenuItem});
             this.添加用户ToolStripMenuItem.Name = "添加用户ToolStripMenuItem";
-            this.添加用户ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.添加用户ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.添加用户ToolStripMenuItem.Text = "账户管理";
             // 
             // 添加账户ToolStripMenuItem
             // 
+            this.添加账户ToolStripMenuItem.BackColor = System.Drawing.Color.Silver;
             this.添加账户ToolStripMenuItem.Name = "添加账户ToolStripMenuItem";
             this.添加账户ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.添加账户ToolStripMenuItem.Text = "添加账户";
@@ -175,6 +180,7 @@
             // 
             // 修改删除ToolStripMenuItem
             // 
+            this.修改删除ToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlLight;
             this.修改删除ToolStripMenuItem.Name = "修改删除ToolStripMenuItem";
             this.修改删除ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.修改删除ToolStripMenuItem.Text = "修改账户";
@@ -182,20 +188,16 @@
             // 
             // toolStripMenuItem5
             // 
+            this.toolStripMenuItem5.BackColor = System.Drawing.Color.MistyRose;
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(124, 22);
             this.toolStripMenuItem5.Text = "切换账户";
             this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
             // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem2.Text = "退出";
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
-            // 
             // 关于ToolStripMenuItem
             // 
+            this.关于ToolStripMenuItem.BackColor = System.Drawing.Color.AliceBlue;
+            this.关于ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.关于ToolStripMenuItem.Name = "关于ToolStripMenuItem";
             this.关于ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.关于ToolStripMenuItem.Text = "关于";
@@ -272,16 +274,8 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 128);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(266, 169);
+            this.dataGridView1.Size = new System.Drawing.Size(648, 344);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseUp);
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
@@ -315,7 +309,9 @@
             // 
             // tbMainID
             // 
+            this.tbMainID.BackColor = System.Drawing.Color.White;
             this.tbMainID.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tbMainID.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.tbMainID.Location = new System.Drawing.Point(79, 13);
             this.tbMainID.Name = "tbMainID";
             this.tbMainID.Size = new System.Drawing.Size(140, 26);
@@ -334,7 +330,9 @@
             // 
             // tbMainBookNum1
             // 
+            this.tbMainBookNum1.BackColor = System.Drawing.Color.White;
             this.tbMainBookNum1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tbMainBookNum1.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.tbMainBookNum1.Location = new System.Drawing.Point(79, 42);
             this.tbMainBookNum1.Name = "tbMainBookNum1";
             this.tbMainBookNum1.Size = new System.Drawing.Size(140, 26);
@@ -353,7 +351,9 @@
             // 
             // tbMainBookName1
             // 
+            this.tbMainBookName1.BackColor = System.Drawing.Color.White;
             this.tbMainBookName1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tbMainBookName1.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.tbMainBookName1.Location = new System.Drawing.Point(376, 42);
             this.tbMainBookName1.Name = "tbMainBookName1";
             this.tbMainBookName1.Size = new System.Drawing.Size(140, 26);
@@ -362,6 +362,7 @@
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button3.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
             this.button3.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
@@ -373,7 +374,7 @@
             this.button3.Size = new System.Drawing.Size(86, 52);
             this.button3.TabIndex = 13;
             this.button3.Text = "清除条件";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // groupBox2
@@ -394,15 +395,35 @@
             this.groupBox2.Controls.Add(this.tbMainID);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox2.Location = new System.Drawing.Point(0, 30);
+            this.groupBox2.Location = new System.Drawing.Point(0, 23);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(59, 69);
+            this.groupBox2.Size = new System.Drawing.Size(441, 71);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             // 
+            // btMainClose
+            // 
+            this.btMainClose.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btMainClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btMainClose.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
+            this.btMainClose.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btMainClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btMainClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Azure;
+            this.btMainClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btMainClose.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btMainClose.Location = new System.Drawing.Point(706, 13);
+            this.btMainClose.Name = "btMainClose";
+            this.btMainClose.Size = new System.Drawing.Size(86, 52);
+            this.btMainClose.TabIndex = 18;
+            this.btMainClose.Text = "关闭(ESC)";
+            this.btMainClose.UseVisualStyleBackColor = false;
+            this.btMainClose.Click += new System.EventHandler(this.button2_Click);
+            // 
             // tbMainBookNum2
             // 
+            this.tbMainBookNum2.BackColor = System.Drawing.Color.White;
             this.tbMainBookNum2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tbMainBookNum2.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.tbMainBookNum2.Location = new System.Drawing.Point(376, 13);
             this.tbMainBookNum2.Name = "tbMainBookNum2";
             this.tbMainBookNum2.Size = new System.Drawing.Size(140, 26);
@@ -421,6 +442,7 @@
             // 
             // button6
             // 
+            this.button6.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button6.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
             this.button6.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
@@ -432,11 +454,12 @@
             this.button6.Size = new System.Drawing.Size(86, 53);
             this.button6.TabIndex = 15;
             this.button6.Text = "图书查询";
-            this.button6.UseVisualStyleBackColor = true;
+            this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button4
             // 
+            this.button4.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button4.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
             this.button4.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
             this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
@@ -448,7 +471,7 @@
             this.button4.Size = new System.Drawing.Size(86, 52);
             this.button4.TabIndex = 14;
             this.button4.Text = "借阅查询";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // groupBox3
@@ -458,7 +481,7 @@
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox3.Location = new System.Drawing.Point(46, 30);
+            this.groupBox3.Location = new System.Drawing.Point(426, 22);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
@@ -508,7 +531,7 @@
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label6.Font = new System.Drawing.Font("华文细黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label6.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label6.Location = new System.Drawing.Point(161, 5);
+            this.label6.Location = new System.Drawing.Point(543, -2);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(78, 23);
@@ -518,9 +541,11 @@
             // bindingNavigator1
             // 
             this.bindingNavigator1.AddNewItem = null;
+            this.bindingNavigator1.BackColor = System.Drawing.Color.AliceBlue;
             this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
             this.bindingNavigator1.DeleteItem = null;
             this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.None;
+            this.bindingNavigator1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.bindingNavigator1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
@@ -536,14 +561,14 @@
             this.tbCurrentPage,
             this.lbAllPage,
             this.btNextPage});
-            this.bindingNavigator1.Location = new System.Drawing.Point(0, 102);
+            this.bindingNavigator1.Location = new System.Drawing.Point(0, 96);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(364, 27);
+            this.bindingNavigator1.Size = new System.Drawing.Size(401, 29);
             this.bindingNavigator1.TabIndex = 16;
             this.bindingNavigator1.Text = "bindingNavigator1";
             this.bindingNavigator1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.bindingNavigator1_ItemClicked);
@@ -551,7 +576,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(32, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(41, 26);
             this.bindingNavigatorCountItem.Text = "/ {0}";
             this.bindingNavigatorCountItem.ToolTipText = "总项数";
             // 
@@ -561,7 +586,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 26);
             this.bindingNavigatorMoveFirstItem.Text = "移到第一条记录";
             // 
             // bindingNavigatorMovePreviousItem
@@ -570,27 +595,29 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 26);
             this.bindingNavigatorMovePreviousItem.Text = "移到上一条记录";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 29);
             // 
             // bindingNavigatorPositionItem
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "位置";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.BackColor = System.Drawing.Color.AliceBlue;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(38, 23);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(24, 29);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "当前位置";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 29);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -598,7 +625,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 26);
             this.bindingNavigatorMoveNextItem.Text = "移到下一条记录";
             // 
             // bindingNavigatorMoveLastItem
@@ -607,13 +634,13 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 26);
             this.bindingNavigatorMoveLastItem.Text = "移到最后一条记录";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 29);
             // 
             // btLastPage
             // 
@@ -621,18 +648,20 @@
             this.btLastPage.Image = ((System.Drawing.Image)(resources.GetObject("btLastPage.Image")));
             this.btLastPage.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btLastPage.Name = "btLastPage";
-            this.btLastPage.Size = new System.Drawing.Size(48, 24);
+            this.btLastPage.Size = new System.Drawing.Size(62, 26);
             this.btLastPage.Text = "上一页";
             // 
             // tbCurrentPage
             // 
+            this.tbCurrentPage.BackColor = System.Drawing.Color.AliceBlue;
+            this.tbCurrentPage.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tbCurrentPage.Name = "tbCurrentPage";
-            this.tbCurrentPage.Size = new System.Drawing.Size(24, 27);
+            this.tbCurrentPage.Size = new System.Drawing.Size(24, 29);
             // 
             // lbAllPage
             // 
             this.lbAllPage.Name = "lbAllPage";
-            this.lbAllPage.Size = new System.Drawing.Size(44, 24);
+            this.lbAllPage.Size = new System.Drawing.Size(58, 26);
             this.lbAllPage.Text = "总页数";
             // 
             // btNextPage
@@ -641,7 +670,7 @@
             this.btNextPage.Image = ((System.Drawing.Image)(resources.GetObject("btNextPage.Image")));
             this.btNextPage.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btNextPage.Name = "btNextPage";
-            this.btNextPage.Size = new System.Drawing.Size(48, 24);
+            this.btNextPage.Size = new System.Drawing.Size(62, 26);
             this.btNextPage.Text = "下一页";
             // 
             // dataGridView2
@@ -651,38 +680,30 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.ContextMenuStrip = this.contextMenuStrip1;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView2.GridColor = System.Drawing.Color.LightSkyBlue;
             this.dataGridView2.Location = new System.Drawing.Point(0, 128);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView2.Name = "dataGridView2";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView2.RowTemplate.Height = 27;
-            this.dataGridView2.Size = new System.Drawing.Size(266, 169);
+            this.dataGridView2.Size = new System.Drawing.Size(648, 344);
             this.dataGridView2.TabIndex = 17;
             this.dataGridView2.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_CellMouseUp);
             this.dataGridView2.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellValueChanged);
@@ -691,14 +712,14 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.panel1.BackColor = System.Drawing.Color.SkyBlue;
             this.panel1.Controls.Add(this.cbSavePwd);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.btMainEnter);
             this.panel1.Controls.Add(this.tbPwd);
             this.panel1.Controls.Add(this.tbUser);
             this.panel1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 140);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(265, 298);
@@ -778,23 +799,6 @@
             this.timer2.Interval = 500;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // btMainClose
-            // 
-            this.btMainClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btMainClose.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
-            this.btMainClose.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.btMainClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btMainClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Azure;
-            this.btMainClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btMainClose.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btMainClose.Location = new System.Drawing.Point(706, 13);
-            this.btMainClose.Name = "btMainClose";
-            this.btMainClose.Size = new System.Drawing.Size(86, 52);
-            this.btMainClose.TabIndex = 18;
-            this.btMainClose.Text = "关闭(ESC)";
-            this.btMainClose.UseVisualStyleBackColor = true;
-            this.btMainClose.Click += new System.EventHandler(this.button2_Click);
-            // 
             // MainForm
             // 
             this.AcceptButton = this.btMainEnter;
@@ -802,7 +806,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.CancelButton = this.btMainClose;
-            this.ClientSize = new System.Drawing.Size(266, 297);
+            this.ClientSize = new System.Drawing.Size(648, 472);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.bindingNavigator1);
@@ -811,6 +815,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
+            this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
@@ -844,7 +849,6 @@
         private System.Windows.Forms.ToolStripMenuItem 增删改账号管理员权限ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 添加用户ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 关于ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.DataGridView dataGridView1;
   
 

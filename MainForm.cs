@@ -62,7 +62,7 @@ namespace 图书馆管理系统
                 sql_adapter.Fill(data_set, $"{tableStr}");
                 AllRowsnum = data_set.Tables[0].Rows.Count;
                 AllPage = (AllRowsnum % PageRows == 0) ? (AllRowsnum / PageRows) : (AllRowsnum / PageRows + 1);
-                lbAllPage.Text = AllPage.ToString();
+                lbAllPage.Text = "/"+AllPage.ToString();
 
             }
             catch (Exception ex)
@@ -84,20 +84,6 @@ namespace 图书馆管理系统
         private void 关于ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("拿来练习用的\n图书馆管理简易系统", "关于软件");
-        }
-
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            this.Visible = false;
-            DialogResult result = MessageBox.Show("请确定是否要退出该应用", "退出提示", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
-            {
-                this.Close();
-            }
-            else
-            {
-                this.Visible = true;
-            }
         }
 
         private void toolStripMenuItem1_Click_1(object sender, EventArgs e)
@@ -133,9 +119,9 @@ namespace 图书馆管理系统
             bindingNavigator1.Visible = false;
             label1.Text = DateTime.Now.ToLongDateString();
             label6.Text = DateTime.Now.ToLongTimeString();
-            dataGridView1.DefaultCellStyle.BackColor = Color.AliceBlue;
+            dataGridView1.DefaultCellStyle.BackColor = Color.GhostWhite;
             dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.WhiteSmoke;
-            dataGridView2.DefaultCellStyle.BackColor = Color.AliceBlue;
+            dataGridView2.DefaultCellStyle.BackColor = Color.GhostWhite;
             dataGridView2.AlternatingRowsDefaultCellStyle.BackColor = Color.WhiteSmoke;
             dataGridView1.BackgroundColor = Color.AliceBlue;
             dataGridView2.BackgroundColor = Color.AliceBlue;
@@ -765,5 +751,6 @@ namespace 图书馆管理系统
                 this.Visible = true;
             }
         }
+
     }
 }
