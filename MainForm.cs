@@ -433,7 +433,7 @@ namespace 图书馆管理系统
                 this.MinimumSize = new Size(1034, 776);
                 this.MaximumSize = this.MinimumSize;
                 this.Size = MinimumSize;
-                this.FormBorderStyle = FormBorderStyle.Sizable;
+                this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
                 this.Text = "图书馆简易管理系统";
                 dataGridView1.EditMode = DataGridViewEditMode.EditOnEnter;
                 dataGridView2.EditMode = DataGridViewEditMode.EditOnEnter;

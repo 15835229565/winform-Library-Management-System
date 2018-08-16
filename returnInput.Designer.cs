@@ -256,7 +256,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.CancelButton = this.btReturnClose;
-            this.ClientSize = new System.Drawing.Size(427, 349);
+            this.ClientSize = new System.Drawing.Size(435, 349);
             this.Controls.Add(this.btReturnClose);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label4);
