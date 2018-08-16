@@ -12,4 +12,4 @@
 
 5.运行前需要在本地建立对应数据库和表，详情见program.cs注释
 
-![Image](https://github.com/singhwong/Library-Management-System/blob/master/menu.saveimg.savepath20180812234239.jpg)
+![Image](https://github.com/singhwong/winform-Library-Management-System/blob/master/menu.saveimg.savepath20180816133056.jpg)
